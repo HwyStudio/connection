@@ -8,20 +8,6 @@ import copy
 
 mutex = Lock()
 
-# tp温度,0代表关，1代表开
-# motor_forward电机正转，1表示正转，0无意义
-#motor_reversal电机反转，1表示反转，0无意义
-# motor_forward与motor_reversal不可同时为1
-# og氧气，0代表关，1代表开
-# pwm占空比，范围0-100
-# code = [
-# 	['tp', '1'.encode('utf-8')],
-# 	['motor_forward', '0'.encode('utf-8')],
-# 	['motor_reversal', '0'.encode('utf-8')],
-# 	['og', '0'.encode('utf-8')],
-# 	['pwm', '0'.encode('utf-8')]
-# ]
-
 data_rec = ''
 data_rec = data_rec.encode('utf-8') # 由于串口使用的是字节，故而要进行转码，否则串口会不识别
 temp = '0'
