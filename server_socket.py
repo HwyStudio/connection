@@ -36,12 +36,6 @@ def recvData(client_socket, cursor, mysql_db):
 		print(recvInfo)
 		cursor.execute(sql_insert, [recvInfo[0:3], recvInfo[3:6], recvInfo[6:9], recvInfo[9:10], recvInfo[10:11]])
 		mysql_db.commit()
-		# cursor.execute(sql_insert, [recvInfo[3:6]])
-		# mysql_db.commit()
-		# cursor.execute(sql_insert, [recvInfo[6:9]])
-		# mysql_db.commit()
-		# cursor.execute(sql_insert, [recvInfo[9:10]])
-		# mysql_db.commit()
 		mutex.release()
 
 
@@ -98,12 +92,6 @@ def main():
 	)
 	# 创建游标, 操作数据库, 指定游标返回内容为字典类型
 	cursor = mysql_db.cursor()
-	# # 清空news表
-	# cursor.execute(sql_delete_news)
-	# mysql_db.commit()
-	# # 清空MyPara表
-	# cursor.execute(sql_delete_MyPara)
-	# mysql_db.commit()
 	
 	# 创建socket
 	tcpSerSocket = socket(AF_INET, SOCK_STREAM)
